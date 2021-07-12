@@ -2,6 +2,7 @@ const dotenv = require('dotenv')
 const express = require('express')
 const cors = require('cors')
 
+// configure path for the env variables
 dotenv.config({ path: './config/config.env' })
 
 // start up app obj for express
