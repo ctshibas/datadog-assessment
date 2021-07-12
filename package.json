@@ -1,0 +1,29 @@
+{
+  "name": "datadog-assessment",
+  "version": "1.0.0",
+  "description": "a project with a sample web app solution and utilisation of datadog features",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctshibas/datadog-assessment.git"
+  },
+  "keywords": [
+    "node.js",
+    "express",
+    "mongodb",
+    "datadog",
+    "monitoring"
+  ],
+  "author": "Corneille Tshibasu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ctshibas/datadog-assessment/issues"
+  },
+  "homepage": "https://github.com/ctshibas/datadog-assessment#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
