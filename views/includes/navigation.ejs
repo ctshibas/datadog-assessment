@@ -1,0 +1,31 @@
+<div class="backdrop"></div>
+<header class="main-header">
+    <button id="side-menu-toggle">Menu</button>
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <li class="main-header__item">
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/">Welcome!</a>
+            </li>
+            <li class="main-header__item">
+                <a class="<%= path === '/products' ? 'active' : '' %>" href="/villagers">Villagers Card Collection!</a>
+            </li>
+            <li class="main-header__item">
+                <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart">About Me!</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<nav class="mobile-nav">
+    <ul class="main-header__item-list">
+        <li class="main-header__item">
+            <a class="<%= path === '/' ? 'active' : '' %>" href="/">Welcome!</a>
+        </li>
+        <li class="main-header__item">
+            <a class="<%= path === '/products' ? 'active' : '' %>" href="/villagers">Villagers Card Collection!</a>
+        </li>
+        <li class="main-header__item">
+            <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart">About Me!</a>
+        </li>
+    </ul>
+</nav>
