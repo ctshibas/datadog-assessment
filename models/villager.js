@@ -7,7 +7,6 @@ const getDb = require('../util/database').getDb
 const ObjectID = mongodb.ObjectID
 
 class Villager {
-
     // ctor function for Villager Object
     constructor(name, species, birthdayString, personality, catchphrase, hobby, saying, subtype, villagerID, id) {
         this.name = name
@@ -33,8 +32,9 @@ class Villager {
         // return result of the query
         return db
             .collection('villagers')
-            .aggregate([{ $sample: { size: 9 }}])
             .find()
+            .limit(9)
+            .skip(3)
             .toArray()
             .then(villagers => {
                 console.log(villagers)
@@ -44,6 +44,22 @@ class Villager {
 
     }
 
+    // find villagers by id (will be hidden on view)
+    static findById(villagerID) {
+        const db = getDb()
+
+        // return products that have this id
+        // matches on product with find descriptors
+        return db
+            .collection('villagers')
+            .find({ _id: new mongodb.ObjectID(villagerID) })
+            .next()
+            .then(villager => {
+                console.log(villager)
+                return villager
+            })
+            .catch(err => console.log(err));
+    }
 }
 
 module.exports = Villager
