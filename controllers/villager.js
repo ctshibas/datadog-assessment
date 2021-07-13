@@ -25,6 +25,7 @@ exports.getVillager = (req, res, next) => {
         });
 };
 
+// main landing page
 exports.getIndex = (req, res, next) => {
     // for the main page
 };

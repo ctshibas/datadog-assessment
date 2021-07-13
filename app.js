@@ -2,15 +2,22 @@ const dotenv = require('dotenv')
 const path = require('path')
 const express = require('express')
 const cors = require('cors')
-const errorController = require('./controllers/error');
 const mongoose = require('mongoose')
 
+// controller
+const errorController = require('./controllers/error');
 
 // configure path for the env variables
 dotenv.config({ path: './config/config.env' })
 
 // start up app obj for express
 const app = express();
+
+// rendering ngin selection
+// ...pug or handlebars
+
+// including route library
+const villagerRoutes = require('./routes/villager')
 
 // app uses cross-origin
 app.use(cors())
