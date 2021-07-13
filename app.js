@@ -2,7 +2,6 @@ const dotenv = require('dotenv')
 const path = require('path')
 const express = require('express')
 const cors = require('cors')
-const bodyParser = require('body-parser');
 const errorController = require('./controllers/error');
 const mongoose = require('mongoose')
 
@@ -16,10 +15,11 @@ const app = express();
 // app uses cross-origin
 app.use(cors())
 app.use(express.json())
+app.use(express.static(path.join(__dirname, 'public')));
 
+// test middleware for checking it's on the right port
 app.use('/', (req, res, next) => {
     res.send('<h1>Success!</h1>');
-    // console.log(process.env.PORT) - works and picks up the right
 });
 
 // port to listen to + app = exp instance
