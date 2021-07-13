@@ -25,9 +25,15 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')));
 
 // test middleware for checking it's on the right port
-app.use('/', (req, res, next) => {
-    res.send('<h1>Success!</h1>');
-});
+// app.use('/', (req, res, next) => {
+// });
+
+// for rendering
+const expressHbs = require('express-handlebars');
+
+// rendering engine template
+app.set('view engine', 'ejs');
+app.set('views', 'views');
 
 // port to listen to + app = exp instance
 const PORT = process.env.PORT || 3000
