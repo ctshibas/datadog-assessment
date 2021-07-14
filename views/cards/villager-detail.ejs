@@ -4,19 +4,17 @@
 <body>
     <%- include('../includes/navigation.ejs') %>
         <main class="centered">
-            <h1>
-                <%= product.title %>
-            </h1>
+            <h1 class="side-2-side"><%= villager.name['name-USen'] %></h1>
+            <img class="icon-mini" src="<%= villager.icon_uri %>" alt="<%= villager.name['name-USen'] %>">
             <hr>
             <div class="image">
-                <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+                <img src="<%= villager.image_uri %>" alt="<%= villager.name['name-USen'] %>">
             </div>
             <h2>
-                <%= product.price %>
+                Species: <%= villager.species %>
             </h2>
             <p>
-                <%= product.description %>
+                Favorite Quote: <%= villager.saying %>
             </p>
-            <%- include('../includes/add-to-cart.ejs') %>
         </main>
     <%- include('../includes/end.ejs') %>

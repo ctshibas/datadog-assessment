@@ -34,8 +34,8 @@ class Villager {
         return db
             .collection('villagers')
             .find()
-            .limit(6)
-            .skip(5)
+            .limit(8)
+            .skip(3)
             .toArray()
             .then(villagers => {
                 // cmd-line output
