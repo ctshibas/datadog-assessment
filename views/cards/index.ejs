@@ -14,15 +14,19 @@
                             <h1 class="product__title">
                                 <%= villager.name['name-USen'] %>
                             </h1>
+                            <!-- <div>
+                                <img class="icon-mini" src="<%= villager.icon_uri %>" alt="<%= villager.name['name-USen'] %>">
+                            </div> -->
                         </header>
                         <div class="card__image">
                             <img src="<%= villager.image_uri %>" alt="<%= villager.name['name-USen'] %>">
                         </div>
                         <div class="card__content">
-                            <h2 class="product__price"><%= villager.personality %>
+                            <h2 class="product__price"><%= villager.species %><br>
                             </h2>
                             <p class="product__description">
-                                Species: <%= villager.species %>
+                                Personality: <%= villager.personality %><br>
+                                Saying: "<%= villager['catch-phrase'] %>!"
                             </p>
                         </div>
                         <div class="card__actions">
