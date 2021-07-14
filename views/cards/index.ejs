@@ -1,0 +1,38 @@
+<%- include('../includes/head.ejs') %>
+    <!-- <link rel="stylesheet" href="/css/product.css"> -->
+    </head>
+
+    <body>
+<%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <% if (villagers.length > 0) { %>
+            <div class="grid">
+                <% for (let villager of villagers) { %>
+                    <article class="card product-item">
+                        <header class="card__header">
+                            <h1 class="product__title">
+                                <%= villager.name['name-USen'] %>
+                            </h1>
+                        </header>
+                        <div class="card__image">
+                            <img src="<%= villager.image_uri %>" alt="<%= villager.name['name-USen'] %>">
+                        </div>
+                        <div class="card__content">
+                            <h2 class="product__price"><%= villager.personality %>
+                            </h2>
+                            <p class="product__description">
+                                Species: <%= villager.species %>
+                            </p>
+                        </div>
+                        <div class="card__actions">
+                            <a href="/villager/<%=villager._id%>" class="btn">See More</a>
+                        </div>
+                    </article>
+                    <% } %>
+            </div>
+        <% } else { %>
+            <h1>No Villager Found!</h1>
+        <% } %>
+    </main>
+<%- include('../includes/end.ejs') %>

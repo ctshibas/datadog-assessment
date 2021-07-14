@@ -1,10 +1,10 @@
-// import mongoose
-// const mongoose = require('mongoose')
 const mongodb = require('mongodb')
-const getDb = require('../util/database').getDb
+const { getDb } = require('../util/database')
+// const { mongoConnect } = require('../util/database')
+
 
 // Object to correct id data type from mongodb
-const ObjectID = mongodb.ObjectID
+const ObjectId = mongodb.ObjectID
 
 class Villager {
     // ctor function for Villager Object
@@ -19,8 +19,8 @@ class Villager {
         this.subtype = subtype
         this.villagerID = villagerID
 
-        // id
-        this._id = id ? new mongodb.ObjectID(id) : null
+        // id for mongodb objects
+        this._id = id ? new ObjectId(id) : null
     }
 
     // function to display the data of the villagers, possible limit the result and make it random selection
@@ -28,6 +28,7 @@ class Villager {
 
         // use const for connection
         const db = getDb()
+        // console.log(db.collection('villagers'))
 
         // return result of the query
         return db
@@ -37,7 +38,8 @@ class Villager {
             .skip(3)
             .toArray()
             .then(villagers => {
-                console.log(villagers)
+                // cmd-line output
+                // console.log(villagers)
                 return villagers
             })
             .catch(err => console.log(err));
@@ -52,7 +54,7 @@ class Villager {
         // matches on product with find descriptors
         return db
             .collection('villagers')
-            .find({ _id: new mongodb.ObjectID(villagerID) })
+            .find({ _id: new ObjectId(villagerID) })
             .next()
             .then(villager => {
                 console.log(villager)

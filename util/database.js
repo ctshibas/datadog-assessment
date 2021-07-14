@@ -1,15 +1,22 @@
-const mongodb = require('mongodb')
-const MongoClient = mongodb.MongoClient
-const dotenv = require('dotenv')
+// const mongodb = require('mongodb');
+const MongoClient = require('mongodb').MongoClient;
+const mongoose = require('mongoose')
+const { DBObj } = require('../config/config.js')
 
-// set path for db credentials
-dotenv.config({ path: '../config/config.env '})
-
-// variable to hold db connection
+// starting - undefined
 let _db;
+
+// mongoose.connect(DBObj.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+// _db = mongoose.connection;
+
+// _db.once('open', function () {
+	
+// });
+
 const mongoConnect = callback => {
-	// connect to MongoDB
-	MongoClient.connect(process.env.MONGO_URL, { useUnifiedTopology: true })
+	//  connect to MongoDB
+	MongoClient.connect(DBObj.MONGO_URL,
+	 { useNewUrlParser: true, useUnifiedTopology: true })
 		.then(client => {
 			console.log('Connected');
 			_db = client.db('island');
@@ -19,14 +26,16 @@ const mongoConnect = callback => {
 			console.log(err)
 			throw err;
 		});
-}
+};
 
 const getDb = () => {
 	if (_db) {
+		// console.log(_db)
 		return _db;
 	}
 	throw 'No database found!';
 }
 
-module.exports.mongoConnect = mongoConnect;
-module.exports.getDb = getDb;
+exports.mongoConnect = mongoConnect;
+exports.getDb = getDb;
+

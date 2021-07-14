@@ -13,4 +13,4 @@ router.get('/villagers', villagerController.getVillagers)
 router.get('/villagers/:villagerId', villagerController.getVillager)
 
 // export module
-module.export = router;
+module.exports = router;
