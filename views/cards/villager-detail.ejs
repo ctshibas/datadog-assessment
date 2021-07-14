@@ -10,18 +10,19 @@
             <div class="image">
                 <img src="<%= villager.image_uri %>" alt="<%= villager.name['name-USen'] %>">
             </div>
+
             <h2>
                 Species: <%= villager.species %>
             </h2>
-            <p>
+            <h3>
                 Gender: <%= villager.gender %><br>
-                <%= villager.name['name-USen'] %>'s Birthday: <%= villager['birthday-string']%><br>
+                <%= villager.name['name-USen'] %>'s Birthday: <%= villager['birthday-string']%>, (<%= villager.birthday %>)<br>
                 Go-to Hobby: <%= villager.hobby %><br>
                 Favorite Quote: "<%= villager.saying %>"<br>
                 Catch-phrase: "<%= villager['catch-phrase'] %>"<br>
                 Subtype (?): <%= villager.subtype %><br>
 
 
-            </p>
+            </h3>
         </main>
     <%- include('../includes/end.ejs') %>
