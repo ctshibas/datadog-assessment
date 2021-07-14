@@ -15,9 +15,7 @@
                 <% for (let villager of villagers) { %>
                     <article class="card product-item">
                         <header class="card__header">
-                            <h1 class="product__title">
-                                <%= villager.name['name-USen'] %>
-                            </h1>
+                            <h1 class="product__title">#<%= villager.id %>: <%= villager.name['name-USen'] %> </h1>
                         </header>
                         <div class="card__image">
                             <img src="<%= villager.image_uri %>" alt="<%= villager.name['name-USen'] %>">
@@ -27,7 +25,7 @@
                             </h2>
                             <p class="product__description">
                                 Personality: <%= villager.personality %><br>
-                                Fav Saying: "<%= villager['catch-phrase'] %>!"
+                                Catch-phrase: "<%= villager['catch-phrase'] %>!"
                             </p>
                         </div>
                         <div class="card__actions">

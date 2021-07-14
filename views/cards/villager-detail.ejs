@@ -4,7 +4,7 @@
 <body>
     <%- include('../includes/navigation.ejs') %>
         <main class="centered">
-            <h1 class="side-2-side"><%= villager.name['name-USen'] %></h1>
+            <h1 class="side-2-side">#<%= villager.id %>: <%= villager.name['name-USen'] %></h1>
             <img class="icon-mini" src="<%= villager.icon_uri %>" alt="<%= villager.name['name-USen'] %>">
             <hr>
             <div class="image">
@@ -14,7 +14,14 @@
                 Species: <%= villager.species %>
             </h2>
             <p>
-                Favorite Quote: <%= villager.saying %>
+                Gender: <%= villager.gender %><br>
+                <%= villager.name['name-USen'] %>'s Birthday: <%= villager['birthday-string']%><br>
+                Go-to Hobby: <%= villager.hobby %><br>
+                Favorite Quote: "<%= villager.saying %>"<br>
+                Catch-phrase: "<%= villager['catch-phrase'] %>"<br>
+                Subtype (?): <%= villager.subtype %><br>
+
+
             </p>
         </main>
     <%- include('../includes/end.ejs') %>
