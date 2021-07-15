@@ -1,0 +1,31 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+            <% if (author.length > 0) { %>
+                <main class="centered">
+                    <h1 class="side-2-side">#<%= author[0].id %>: <%= author[0].name %></h1>
+                    <img class="icon-mini-author" src="<%= author[0].icon_uri %>" alt="<%= author[0].name %>">
+                    <hr>
+                    <div class="image">
+                        <img src="<%= author[0].image_uri %>" alt="<%= author[0].name %>">
+                    </div>
+
+                    <h2>
+                        Species: <%= author[0].species %>
+                    </h2>
+                    <h3>
+                        Gender: <%= author[0].gender %><br>
+                        <%= author[0].name %>'s Birthday: <%= author[0]['birthday-string']%>, (<%=author[0].birthday %>)<br>
+                        Go-to Hobby: <%= author[0].hobby %><br>
+                        Favorite Quote: "<%= author[0].saying %>"<br>
+                        Catch-phrase: "<%= author[0]['catch-phrase'] %>"<br>
+                        Subtype: <%= author[0].subtype %><br>
+
+                    </h3>
+                </main>
+            <% } else { %>
+                <h1>No Author Found!</h1>
+            <% } %>
+            <%- include('../includes/end.ejs') %>

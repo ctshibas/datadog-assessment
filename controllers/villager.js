@@ -1,12 +1,13 @@
 // import the villager model in the controller
-const Villager = require('../models/villager');
+const Villager = require('../models/villager')
+const author = require('../config/author.json')
 
 //2-3 controller methods...
 
 // getVillagers - get the list of 9 villagers
-exports.getVillagers = (req, res, next) => {
-    res.send('<h1>all villagers selected</h1>')
-    console.log('<h1>all villagers selected</h1>')
+// exports.getVillagers = (req, res, next) => {
+//     res.send('<h1>all villagers selected</h1>')
+//     console.log('<h1>all villagers selected</h1>')
 //     Villager.fetchVillagers()
 //         .then(villagers => {
 //             // will render the contents of the villager data
@@ -15,7 +16,7 @@ exports.getVillagers = (req, res, next) => {
 //         .catch(err => {
 //             console.log(err);
 //         });
-};
+// };
 
 // getVillager - get one of the villagers
 exports.getVillager = (req, res, next) => {
@@ -36,13 +37,21 @@ exports.getVillager = (req, res, next) => {
         });
 };
 
+exports.getAuthor = (req, res, next) => {
+    // console.log(author)
+    res.render('cards/about-me', {
+        pageTitle: 'About me!',
+        path: '/about-me',
+        author: author
+    });
+};
+
 // main landing page
 exports.getIndex = (req, res, next) => {
     
     // rendering test
     Villager.fetchVillagers()
     .then(villagers => {
-        // console.log(villagers[0].name['name-USen'])
         res.render('cards/index', {
             pageTitle: 'ACNH Card Collection!',
             path: '/',

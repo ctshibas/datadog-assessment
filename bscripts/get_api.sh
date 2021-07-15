@@ -1,0 +1,1 @@
+curl "https://acnhapi.com/v1/villagers/" >> villagers.json

@@ -6,13 +6,6 @@ const { DBObj } = require('../config/config.js')
 // starting - undefined
 let _db;
 
-// mongoose.connect(DBObj.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-// _db = mongoose.connection;
-
-// _db.once('open', function () {
-	
-// });
-
 const mongoConnect = callback => {
 	//  connect to MongoDB
 	MongoClient.connect(DBObj.MONGO_URL,

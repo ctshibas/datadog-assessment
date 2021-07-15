@@ -234,6 +234,14 @@ form {
   
 }
 
+.icon-mini-author {
+  margin-left: 0px;
+  height: 80px;
+  width: 150px;
+  display: inline;
+  
+}
+
 @media (min-width: 768px) {
   .main-header__nav {
     display: flex;

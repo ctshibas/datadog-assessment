@@ -1,0 +1,17 @@
+[   
+    {
+        "id": 24,
+        "name": "Corn",
+        "gender": "HUMAN",
+        "birthday": "June 20th",
+        "birthday-string": "20/6",
+        "hobby": "Making music, long walks on the beach, play video games, etcetera, etcetera",
+        "subtype": "C",
+        "catch-phrase": "Ah-ha-HA!",
+        "saying": "Que sera, sera-ra-ra-ra-ra-ra...",
+        "species": "HUMAN",
+        "image_uri": "https://cdn130.picsart.com/292287390004201.png?r480x480",
+        "icon_uri": "https://i.kym-cdn.com/entries/icons/original/000/028/261/Matt_CPU.jpg"
+        
+    }
+]

@@ -28,7 +28,6 @@ class Villager {
 
         // use const for connection
         const db = getDb()
-        // console.log(db.collection('villagers'))
 
         // return result of the query
         return db
@@ -38,8 +37,6 @@ class Villager {
             .skip(3)
             .toArray()
             .then(villagers => {
-                // cmd-line output
-                // console.log(villagers)
                 return villagers
             })
             .catch(err => console.log(err));
@@ -57,7 +54,7 @@ class Villager {
             .find({ _id: new ObjectId(villagerID) })
             .next()
             .then(villager => {
-                console.log(villager)
+                // console.log(villager)
                 return villager
             })
             .catch(err => console.log(err));

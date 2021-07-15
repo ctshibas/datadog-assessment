@@ -9,7 +9,8 @@ const router = express.Router()
 
 // main routes for the web solution
 router.get('/', villagerController.getIndex)
-router.get('/villagers', villagerController.getVillagers)
+router.get('/about-me', villagerController.getAuthor)
+// router.get('/villagers', villagerController.getVillagers)
 router.get('/villagers/:villagerId', villagerController.getVillager)
 
 // export module
