@@ -2,3 +2,5 @@ config.env
 author.json
 author.json
 bscripts/get_api.sh
+bscripts/get_api.sh
+config/config.js

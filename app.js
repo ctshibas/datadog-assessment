@@ -1,8 +1,39 @@
+const tracer = require('dd-trace').init({
+	logInjection: true
+})
 const dotenv = require('dotenv')
 const path = require('path')
 const express = require('express')
 const cors = require('cors')
 const { mongoConnect } = require('./util/database')
+const formats = require('dd-trace/ext/formats');
+
+// set up for the dd-trace
+// dd-trace.configure({ DD_ENV: "sandbox", DD_LOGS_INJECTION: true, DD_TRACE_SAMPLE_RATE="1" })
+
+// set up code instrument for nodejs integration for datadog
+var StatsD = require('hot-shots');
+var dogstatsd = new StatsD();
+
+// Increment a counter.
+dogstatsd.increment('page.views')
+
+// trying to use manual logging
+class Logger {
+    log(level, message) {
+        const span = tracer.scope().active();
+        const time = new Date().toISOString();
+        const record = { time, level, message };
+
+        if (span) {
+            tracer.inject(span.context(), formats.LOG, record);
+        }
+
+        console.log(JSON.stringify(record));
+    }
+}
+
+module.exports = Logger;
 
 // controller
 const errorController = require('./controllers/error')
